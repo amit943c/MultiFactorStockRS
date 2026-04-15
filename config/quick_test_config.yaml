@@ -1,0 +1,85 @@
+# Quick test configuration — small universe for verification
+
+universe:
+  source: "watchlist"
+  watchlist: ["AAPL", "MSFT", "GOOGL", "AMZN", "NVDA", "META", "TSLA", "JPM", "V", "JNJ", "UNH", "XOM", "PG", "MA", "HD"]
+  min_history_days: 200
+
+dates:
+  start: "2023-01-01"
+  end: "2025-01-01"
+
+rebalance:
+  frequency: "weekly"
+  day_of_week: 4
+
+portfolio:
+  top_n: 5
+  max_position_weight: 0.25
+  equal_weight: true
+  transaction_cost_bps: 10
+  slippage_bps: 5
+  allow_cash: true
+
+benchmark:
+  ticker: "SPY"
+
+factors:
+  momentum:
+    enabled: true
+    weights:
+      return_1m: 0.20
+      return_3m: 0.30
+      return_6m: 0.10
+    direction: "higher_is_better"
+
+  trend:
+    enabled: true
+    weights:
+      dist_ma50: 0.10
+      dist_ma200: 0.10
+    direction: "higher_is_better"
+
+  mean_reversion:
+    enabled: true
+    weights:
+      rsi_14: 0.05
+    direction: "lower_is_better"
+
+  liquidity:
+    enabled: true
+    weights:
+      avg_dollar_volume: 0.05
+      relative_volume: 0.05
+    direction: "higher_is_better"
+
+  volatility:
+    enabled: true
+    weights:
+      realized_vol_60d: 0.05
+    direction: "lower_is_better"
+
+  fundamental:
+    enabled: false
+    weights:
+      pe_ratio: 0.0
+      ebitda_margin: 0.0
+    direction: "mixed"
+
+  sentiment:
+    enabled: false
+    weights:
+      sentiment_score: 0.0
+    direction: "higher_is_better"
+
+output:
+  charts_dir: "outputs/charts"
+  tables_dir: "outputs/tables"
+  reports_dir: "outputs/reports"
+  chart_format: "png"
+  dpi: 150
+  theme: "light"
+
+logging:
+  level: "INFO"
+  file: "outputs/pipeline.log"

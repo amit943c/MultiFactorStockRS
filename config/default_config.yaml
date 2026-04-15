@@ -1,0 +1,98 @@
+# Multi-Factor Stock Ranking System — Default Configuration
+
+universe:
+  source: "csv"                    # csv | watchlist
+  csv_path: "data/sp500_universe.csv"
+  watchlist: []                    # override tickers when source=watchlist
+  min_history_days: 252            # require at least 1yr of price history
+
+dates:
+  start: "2020-01-01"
+  end: "2025-12-31"
+
+rebalance:
+  frequency: "monthly"             # weekly | monthly
+  day_of_week: 4                   # 0=Mon … 4=Fri
+
+portfolio:
+  top_n: 10
+  max_position_weight: 0.10
+  equal_weight: true
+  transaction_cost_bps: 10         # one-way cost in basis points
+  slippage_bps: 5                  # one-way slippage in basis points
+  allow_cash: true
+
+benchmark:
+  ticker: "SPY"
+
+factors:
+  momentum:
+    enabled: true
+    weights:
+      return_1m: 0.15
+      return_3m: 0.35
+      return_6m: 0.20
+    direction: "higher_is_better"
+
+  trend:
+    enabled: true
+    weights:
+      dist_ma50: 0.15
+      dist_ma200: 0.10
+    direction: "higher_is_better"
+
+  mean_reversion:
+    enabled: false                  # disabled — contradicts momentum
+    weights:
+      rsi_14: 0.05
+    direction: "lower_is_better"
+
+  liquidity:
+    enabled: true
+    weights:
+      avg_dollar_volume: 0.05
+      relative_volume: 0.00
+    direction: "higher_is_better"
+
+  volatility:
+    enabled: false                  # disabled — penalizes bull market leaders
+    weights:
+      realized_vol_60d: 0.05
+    direction: "lower_is_better"
+
+  fundamental:
+    enabled: false                  # disabled until data available
+    weights:
+      pe_ratio: 0.05
+      ebitda_margin: 0.05
+    direction: "mixed"
+
+  sentiment:
+    enabled: false                  # placeholder
+    weights:
+      sentiment_score: 0.00
+    direction: "higher_is_better"
+
+output:
+  charts_dir: "outputs/charts"
+  tables_dir: "outputs/tables"
+  reports_dir: "outputs/reports"
+  chart_format: "png"              # png | html | both
+  dpi: 150
+  theme: "light"                   # light | dark
+
+logging:
+  level: "INFO"                    # DEBUG | INFO | WARNING | ERROR
+  file: "outputs/pipeline.log"
+
+# Research settings
+research:
+  sector_neutral: false
+  weighting_scheme: "static"    # static | equal | ic_weighted | inverse_correlation
+  winsorize_lower: 0.01
+  winsorize_upper: 0.99
+
+sensitivity:
+  top_n_values: [5, 10, 15, 20, 30, 50]
+  cost_values: [0, 5, 10, 20, 30, 50]
+  frequencies: ["weekly", "monthly"]
