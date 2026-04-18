@@ -2,7 +2,7 @@
 
 A quantitative equity research platform that ranks ~100 U.S. large-cap stocks using a composite factor model, builds concentrated portfolios, and evaluates them through backtesting with full transparency on assumptions, costs, and biases.
 
-The default configuration runs a momentum + trend model on a 100-stock S&P 500 subset from 2020–2025. Monthly rebalancing, top-10 holdings, equal-weight. Out of the box it produces a **+299% total return (26.5% CAGR)** with a **1.07 Sharpe** and **-27% max drawdown** against SPY — though the usual caveats apply (see [Assumptions and Limitations](#assumptions-and-limitations)).
+The default configuration runs a momentum + trend model on a 100-stock S&P 500 subset from 2020–2025. Monthly rebalancing, top-10 holdings, equal-weight. Out of the box it produces a **+301% total return (26.6% CAGR)** with a **1.08 Sharpe** and **-27% max drawdown** against SPY — though the usual caveats apply (see [Assumptions and Limitations](#assumptions-and-limitations)).
 
 ---
 
@@ -22,9 +22,9 @@ From the default backtest (Jan 2020 – Dec 2025, 100-stock universe):
 
 | Metric | Value |
 |--------|-------|
-| Total Return | +299.5% |
-| CAGR | 26.5% |
-| Sharpe Ratio | 1.07 |
+| Total Return | +301.3% |
+| CAGR | 26.6% |
+| Sharpe Ratio | 1.08 |
 | Sortino Ratio | 1.04 |
 | Max Drawdown | -27.4% |
 | Calmar Ratio | 0.97 |
