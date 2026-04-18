@@ -1,28 +1,30 @@
 # Multi-Factor Strategy — Backtest Report
-*Generated 2026-04-14 23:21 UTC*
+*Generated 2026-04-17 02:04 UTC*
 
 ## Performance Summary
 
 | Metric | Value |
 | --- | --- |
-| Total Return | +299.49% |
-| CAGR | +26.46% |
-| Annualized Volatility | 24.68% |
-| Sharpe Ratio | 1.074 |
+| Total Return | +301.28% |
+| CAGR | +26.55% |
+| Annualized Volatility | 24.67% |
+| Sharpe Ratio | 1.078 |
 | Sortino Ratio | 1.035 |
 | Max Drawdown | -27.37% |
-| Calmar Ratio | 0.967 |
-| Daily Win Rate | 55.55% |
-| Weekly Win Rate | 56.77% |
+| Calmar Ratio | 0.970 |
+| Daily Win Rate | 55.75% |
+| Weekly Win Rate | 57.10% |
 | Avg Turnover (one-way) | 47.78% |
+| Excess Return (ann.) | +10.38% |
+| Information Ratio | 0.689 |
 
 ## Key Highlights
 
-- **CAGR**: +26.46%
-- **Sharpe Ratio**: 1.074
+- **CAGR**: +26.55%
+- **Sharpe Ratio**: 1.078
 - **Max Drawdown**: -27.37%
 - **Sortino Ratio**: 1.035
-- **Calmar Ratio**: 0.967
+- **Calmar Ratio**: 0.970
 
 ## Configuration
 
@@ -141,9 +143,9 @@ sensitivity:
 
 | Month | Return |
 |-------|--------|
-| 2022-01 | -13.26% |
+| 2022-01 | -14.36% |
+| 2022-09 | -7.23% |
 | 2023-09 | -7.13% |
-| 2022-09 | -7.08% |
 
 ## Assumptions & Caveats
 
